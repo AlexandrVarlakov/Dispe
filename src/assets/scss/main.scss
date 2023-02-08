@@ -1,0 +1,57 @@
+@import 'fonts-include/exo2';
+@import 'fonts-include/nunito';
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+
+html{
+	scroll-behavior: smooth;
+	font-family: $nunito;
+}
+
+
+a{
+	text-decoration: none;
+	outline: none;
+}
+
+input, textarea{
+	font-family: inherit;
+	border: none;
+	background: #fff;
+	outline: none;
+}
+
+address{
+	font-style: normal;
+}
+
+ul{
+	list-style: none;
+}
+
+
+.section{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	padding: 0 30px;
+}
+
+.section__inner{
+	width: 100%;
+	max-width: 1200px;
+}
+
+body{
+	background: var(--primary-color);
+}
+
+main{
+	min-height: 100vh
+}
+
