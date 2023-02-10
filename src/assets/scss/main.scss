@@ -1,5 +1,21 @@
+
+
 @import 'fonts-include/exo2';
 @import 'fonts-include/nunito';
+@import '_grid';
+
+
+$black: #1C2527;
+$green-text: #6BD369;
+$blue-dark: #1FA3C8;
+$gray: #A4ACAE;
+$gray-light: #E8F0F2;
+$red: #FF5E7B;
+
+
+
+
+
 
 *{
 	margin: 0;
@@ -35,23 +51,50 @@ ul{
 }
 
 
-.section{
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	padding: 0 30px;
-}
-
-.section__inner{
-	width: 100%;
-	max-width: 1200px;
+html, body{
+	min-height: 100vh;
 }
 
 body{
-	background: var(--primary-color);
+	display: flex;
+	flex-direction: column;
 }
 
 main{
-	min-height: 100vh
+	flex-grow: 1;
 }
 
+.section{
+	padding: 0 12px;
+
+	@media (min-width: $md){
+		padding: 0 24px;
+	}
+	@media (min-width: $xl){
+		padding: 0 80px;
+	}
+}
+.section__inner{
+
+}
+
+
+
+@mixin text {
+	font-family: $nunito;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 1.135;
+	color: $black;
+	transition: 300ms;
+}
+
+
+.text{
+	@include text;
+	
+}
+
+
+
+@import 'units/header/header';
