@@ -2,18 +2,23 @@
 
 @import 'fonts-include/exo2';
 @import 'fonts-include/nunito';
-@import '_grid';
+@import 'vars';
+@import 'offsets';
+@import 'grid';
+@import 'alignment';
+@import 'length';
+@import 'display';
+@import 'mixins';
 
 
-$black: #1C2527;
-$green-text: #6BD369;
-$blue-dark: #1FA3C8;
-$gray: #A4ACAE;
-$gray-light: #E8F0F2;
-$red: #FF5E7B;
-
-
-
+svg{
+	path{
+		transition: 300ms;
+	}
+	rect{
+		transition: 300ms;
+	}
+}
 
 
 
@@ -30,9 +35,19 @@ html{
 }
 
 
+.no-scroll{
+	overflow: hidden;
+}
+
 a{
 	text-decoration: none;
 	outline: none;
+}
+
+button{
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
 }
 
 input, textarea{
@@ -62,39 +77,258 @@ body{
 
 main{
 	flex-grow: 1;
+	padding-top: 56px;
+
+
+	@media (min-width: $md){
+		padding-top: 80px
+	}
+
+	@media (min-width: $lg){
+		padding-top: 132px;
+	}
+	
 }
 
 .section{
-	padding: 0 12px;
+	padding: 0 var(--section-x-padding);
 
-	@media (min-width: $md){
-		padding: 0 24px;
-	}
-	@media (min-width: $xl){
-		padding: 0 80px;
-	}
 }
 .section__inner{
 
 }
 
 
+.close-btn{
+	svg{
+		max-width: 40px;
+		max-height: 40px;
+	}
+	
 
-@mixin text {
-	font-family: $nunito;
-	font-weight: 600;
-	font-size: 16px;
-	line-height: 1.135;
-	color: $black;
-	transition: 300ms;
+	@media (min-width: $sm){
+		svg{
+			max-width: initial;
+			max-height: initial;
+		}
+		
+	}
+
+	path{
+		transition: 300ms;
+	}
+
+	&:hover{
+		path{
+			stroke: $blue;
+		}
+	}
 }
-
 
 .text{
 	@include text;
+
 	
+}
+
+.h1{
+	font-family: $exo;
+	
+	font-weight: 500;
+	font-size: 28px;
+	
+	line-height: 1.2;
+	color: $black;
+	margin-bottom: 24px;
+
+	
+
+	@media (min-width: $sm){
+		font-size: 30px;
+		margin-bottom: 32px;
+	}
+	@media (min-width: $lg){
+		font-size: 30px;
+		margin-bottom: 48px;
+	}
+	@media (min-width: $xl){
+		font-size: 36px;
+		margin-bottom: 48px;
+	}
+
+	@media (min-width: $xxl){
+		font-size: 44px;
+		margin-bottom: 64px;
+	}
+	
+	
+
+}
+.h2{
+	font-family: $exo;
+	font-weight: 500;
+	line-height: 1.2;
+	color: $black;
+	font-size: 1.625rem;
+
+	@media (min-width: $lg){
+		font-size: 1.875rem;
+	}
+
+
+	@media (min-width: $xxl){
+		font-size: 2.25rem;
+		
+	}
+
+
+
+}
+
+.h3{
+	font-family: $exo;
+	font-style: normal;
+	font-weight: 500;
+	
+	line-height: 1.2;
+	color: $black;
+	font-size: 1.25rem;
+	@media (min-width: $xl){
+		font-size: 1.5rem;
+	}
 }
 
 
 
+.btn-white{
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 20px 8px;
+	width: 100%;
+	border: 2px solid #FFFFFF;
+	border-radius: 4px;
+	font-weight: 800;
+	font-size: 14px;
+	line-height: 1.3571;
+	text-transform: uppercase;
+
+	transition: 300ms;
+	
+	/* white */
+	color: #FFFFFF;
+	
+	.icon{
+		margin-left: 8px;
+		flex-shrink: 0
+	}
+
+	&:hover{
+		background-color: $blue-dark;
+		border-color: $blue-dark;
+	}
+}
+
+
+.button{
+	display: inline-flex;
+	padding: 23px 32px 22px;
+	align-items: center;
+	justify-content: center;
+	font-family: $nunito;
+	font-style: normal;
+	font-weight: 800;
+	font-size: 14px;
+	line-height: 1.35;
+	border-radius: 4px;
+	text-transform: uppercase;
+	transition: 300ms;
+	box-sizing: border-box;
+	svg, img{
+		flex-shrink: 0;
+		margin-left: 8px;
+	}
+	path{
+		transition: 300ms;
+	}
+	outline: 2px solid transparent;
+	outline-offset: -2px
+}
+
+.button.button-green{
+	background: $blue-dark;
+	color: #fff;
+	&:hover{
+		background-color: $blue;
+	}	
+
+	&:active{
+		background-color: transparent;
+		outline: 2px solid $blue;
+		color: $blue;
+		path{
+			stroke: $blue;
+		}
+	}
+	
+}
+.spoiler-header{
+	cursor: pointer;
+}
+.spoiler-arrow{
+	transition: 300ms;
+	flex-shrink: 0;
+}
+
+.spoiler-header.opened, .spoiler-header.open{
+	& > .spoiler-arrow{
+		transform: rotate(-180deg);
+	}
+}
+.spoiler-header.closed.open{
+	& > .spoiler-arrow{
+		transform: rotate(0deg);
+	}
+}
+
+.input, .textarea{
+	width: 100%;
+	padding: 18px 16px;
+	font-weight: 600;
+	font-size: .9375rem;
+	line-height: 1.25;
+	background-color: #fff;
+	border-radius: 4px;
+	color: $black;
+	transition: 300ms;
+	outline: 2px solid transparent;
+	resize: none;
+	&:focus{
+		outline: 2px solid $blue;
+	}
+	&::placeholder{
+		color: #A4ACAE;
+	}
+
+	@media (min-width: $sm){
+		height: 64px;
+		padding: 14px 24px;
+		font-size: 1.25rem;
+	}
+}
+
+.textarea{
+	box-sizing: border-box
+}
+
+@import 'units/menus/catalog-menu';
+@import 'units/menus/hamburger-menu';
+@import 'units/breadcrumbs/breadcrumbs';
+@import 'units/footer/footer';
 @import 'units/header/header';
+@import 'units/header/search-form';
+@import 'units/faq/faq';
+@import 'units/modals/faq-modal';
+@import 'units/modals/thanks-modal';
+@import 'units/easy-modal/easyModal';
+@import 'units/menus/bottom-menu';

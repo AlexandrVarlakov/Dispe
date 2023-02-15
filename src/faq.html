@@ -1,0 +1,209 @@
+@@include('templates/head.html')
+    @@include('templates/header.html')
+    <main>
+        @@include('templates/breadcrumbs.html')
+        @@include('templates/hamburger-menu.html')
+        
+        @@include('templates/catalog-menu.html')
+
+
+        @@include('templates/bottom-menu.html')
+
+
+        <div class="faq-modal">
+
+            <button class="close-btn">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">                        
+                    <path d="M40 8L8 40" stroke="#A4ACAE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M40 40L8 8" stroke="#A4ACAE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>                        
+                </svg>
+            </button>
+
+            
+                <div class="mb-4 mb-sm-6 mb-xl-10">
+                    <h2 class="h2 mb-1 mb-sm-6 mb-xl-10">Не нашли нужного ответа?</h2>
+                    <h3 class="h3 text-center ">Задайте свой вопрос</h3>
+                </div>
+                <div >
+                    <form action="script.php" class="faq-from">
+                        
+                            <input type="text" class="input " name="name" placeholder="Ваше имя" required>
+                            <input type="text" class="input " name="phone" placeholder="Ваш телефон" required>
+                            <input type="email" class="input" name="email" placeholder="E-mail" required>
+                            <input type="text" class="input" name="theme" placeholder="Тема вопроса" required>
+
+                            <div class="faq-textarea">
+                                <textarea name="text" class="textarea" placeholder="Вопрос"></textarea>
+                            </div>
+                            
+                            
+                            
+                            
+                            <button class="button button-green w-100">
+                                Отправить
+                                <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13 3L17 7L13 11" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M1 7H4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M8 7L15 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                    
+                            </button>
+                            
+                            
+                        
+                    </form>
+                </div>
+            
+        </div>
+
+        <div class="thanks-modal">
+            <img src="assets/img/logo.svg" alt="" class="mb-4">
+            <h3 class="h3">Спасибо! <br />Ваша заявка принята</h3>
+            
+        </div>
+
+
+        <section class="section mb-8 mb-sm-10 mb-lg-12 pb-lg-5 pb-xxl-8">
+            <div class="section__inner">
+                <h1 class="h1">Вопрос ответ</h1>
+                <button class="button button-green w-100 w-sm-auto mb-sm-2 mb-lg-6" data-role="call-modal" data-target=".faq-modal">
+                    Задать вопрос
+                        
+                </button>
+                <div class="accordion" data-setting="only-one">
+                    <div class="faq-item">
+                        <div class="faq-header spoiler-header open" data-target="#faq-1">
+                            <p class="faq-header__text">Lorem ipsum dolor sit amet, adipiscing elit, sed do eiusmod tempor incididunt ut labore?</p>
+                            <img src="assets/img/icons/acc-arrow.svg" alt="" class="faq-header__arrow spoiler-arrow ">
+                        </div>
+                        <div class="faq-body spoiler-body" id="faq-1">
+                            <div class="faq-body__inner" data-measure="">
+                                <p class="faq-body__text">Lorem ipsum dolor sit amet, consectetur consectetur consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="faq-item">
+                        <div class="faq-header spoiler-header" data-target="#faq-2">
+                            <p class="faq-header__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore?</p>
+                            <img src="assets/img/icons/acc-arrow.svg" alt="" class="faq-header__arrow spoiler-arrow">
+                        </div>
+                        <div class="faq-body spoiler-body" id="faq-2">
+                            <div class="faq-body__inner" data-measure="">
+                                <p class="faq-body__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="faq-item">
+                        <div class="faq-header spoiler-header " data-target="#faq-3">
+                            <p class="faq-header__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore?</p>
+                            <img src="assets/img/icons/acc-arrow.svg" alt="" class="faq-header__arrow spoiler-arrow">
+                        </div>
+                        <div class="faq-body spoiler-body" id="faq-3">
+                            <div class="faq-body__inner" data-measure="">
+                                <p class="faq-body__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            </div>
+                        </div>
+                    </div>
+    
+    
+                    <div class="faq-item">
+                        <div class="faq-header spoiler-header" data-target="#faq-4">
+                            <p class="faq-header__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore?</p>
+                            <img src="assets/img/icons/acc-arrow.svg" alt="" class="faq-header__arrow spoiler-arrow">
+                        </div>
+                        <div class="faq-body spoiler-body" id="faq-4">
+                            <div class="faq-body__inner" data-measure="">
+                                <p class="faq-body__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="faq-item">
+                        <div class="faq-header spoiler-header " data-target="#faq-5">
+                            <p class="faq-header__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore?</p>
+                            <img src="assets/img/icons/acc-arrow.svg" alt="" class="faq-header__arrow spoiler-arrow">
+                        </div>
+                        <div class="faq-body spoiler-body" id="faq-5">
+                            <div class="faq-body__inner" data-measure="">
+                                <p class="faq-body__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="faq-item">
+                        <div class="faq-header spoiler-header" data-target="#faq-6">
+                            <p class="faq-header__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore?</p>
+                            <img src="assets/img/icons/acc-arrow.svg" alt="" class="faq-header__arrow spoiler-arrow">
+                        </div>
+                        <div class="faq-body spoiler-body" id="faq-6">
+                            <div class="faq-body__inner" data-measure="">
+                                <p class="faq-body__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="faq-item">
+                        <div class="faq-header spoiler-header " data-target="#faq-7">
+                            <p class="faq-header__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore?</p>
+                            <img src="assets/img/icons/acc-arrow.svg" alt="" class="faq-header__arrow spoiler-arrow">
+                        </div>
+                        <div class="faq-body spoiler-body" id="faq-7">
+                            <div class="faq-body__inner" data-measure="">
+                                <p class="faq-body__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+
+                
+            </div>
+        </section>
+        
+        <section  class="section faq-form-section py-8 py-lg-12">
+            <img src="assets/img/questions.png" alt="" class="faq-form-section__decor">
+            <div class="section__inner">
+                <div class="row">
+                    <div class="col-10 mx-auto col-lg-12 col-xxl-4 mb-4 mb-sm-5 ">
+                        <h2 class="h2 mb-4 mb-sm-5">Не нашли нужного ответа?</h2>
+                        <h3 class="h3">Задайте свой вопрос</h3>
+                    </div>
+                    <div class="col-10 col-lg-12 col-xxl-8 mx-auto">
+                        <form action="script.php" class="faq-from">
+                            
+                                <input type="text" class="input " name="name" placeholder="Ваше имя" required>
+                                <input type="text" class="input " name="phone" placeholder="Ваш телефон" required>
+                                <input type="email" class="input" name="email" placeholder="E-mail" required>
+                                <input type="text" class="input" name="theme" placeholder="Тема вопроса" required>
+
+                                <div class="faq-textarea">
+                                    <textarea name="text" class="textarea" placeholder="Вопрос"></textarea>
+                                </div>
+                                
+                                
+                                
+                                
+                                <button class="button button-green w-100">
+                                    Отправить
+                                    <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M13 3L17 7L13 11" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M1 7H4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M8 7L15 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                        
+                                </button>
+                                
+                                
+                            
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+
+    @@include('templates/footer.html')
+@@include('templates/foot.html')
