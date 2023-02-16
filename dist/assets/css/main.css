@@ -7841,23 +7841,22 @@ main {
       -ms-flex-positive: 1;
           flex-grow: 1;
 }
-
-.section {
-  padding: 0 var(--section-x-padding);
-}
-
-.section.first-section {
+main > .section:first-of-type {
   padding-top: 56px;
 }
 @media (min-width: 768px) {
-  .section.first-section {
+  main > .section:first-of-type {
     padding-top: 80px;
   }
 }
 @media (min-width: 992px) {
-  .section.first-section {
+  main > .section:first-of-type {
     padding-top: 132px;
   }
+}
+
+.section {
+  padding: 0 var(--section-x-padding);
 }
 
 .close-btn svg {

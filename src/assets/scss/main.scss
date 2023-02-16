@@ -78,7 +78,18 @@ body{
 main{
 	flex-grow: 1;
 	
+	& > .section:first-of-type{
+		padding-top: 56px;
 	
+	
+		@media (min-width: $md){
+			padding-top: 80px
+		}
+	
+		@media (min-width: $lg){
+			padding-top: 132px;
+		}
+	}
 }
 
 .section{
@@ -86,18 +97,7 @@ main{
 
 }
 
-.section.first-section{
-	padding-top: 56px;
 
-
-	@media (min-width: $md){
-		padding-top: 80px
-	}
-
-	@media (min-width: $lg){
-		padding-top: 132px;
-	}
-}
 
 .section__inner{
 

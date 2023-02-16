@@ -320,7 +320,8 @@ modalCallBtns.forEach( btn => {
 //5. header
 
 const header = document.querySelector('.header');
-window.addEventListener('scroll', function(){
+
+function styledHeader(){
     let halfHeaderHeight = header.offsetHeight / 3;
 
     if (window.pageYOffset > halfHeaderHeight ){
@@ -328,6 +329,15 @@ window.addEventListener('scroll', function(){
     } else{
         header.classList.remove('scrolled');
     }
+}
+
+
+document.addEventListener('DOMContentLoaded', function(){
+    styledHeader()
+})
+
+window.addEventListener('scroll', function(){
+    styledHeader()
     
 })
 //5. КОНЕЦ: header
@@ -460,3 +470,5 @@ phoneMasks.forEach( (input) => {
       });
 })
 //8. КОНЕЦ: Маски
+
+
