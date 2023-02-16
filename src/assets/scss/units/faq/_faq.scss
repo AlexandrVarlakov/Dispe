@@ -12,8 +12,10 @@
 .faq-header{
     display: flex;
     align-items: center;
+    justify-content: space-between;
     @media (min-width: $sm){
         align-items: flex-start;
+        justify-content: flex-start;
     }
 
 }
