@@ -5,6 +5,10 @@
     4. Модальные окна
     5. header
     6.Мобильная строка поиска
+    7. Faq-форма
+    8. Маски
+    9. Range-slider
+    10. Добавление в избранное
 */
 
 
@@ -461,14 +465,290 @@ if ( faqForms.length ){
 //7. КОНЕЦ: Faq-форма
 
 //8. Маски
-let phoneMasks = document.querySelectorAll("input[name='phone']");
+const phoneMasks = document.querySelectorAll("input[name='phone']");
+if (phoneMasks.length){
+    phoneMasks.forEach( (input) => {
+        IMask(
+            input, {
+              mask: '+{7}(000)000-00-00'
+          });
+    })
+}
 
-phoneMasks.forEach( (input) => {
-    IMask(
-        input, {
-          mask: '+{7}(000)000-00-00'
-      });
-})
+const productQtyInputs = document.querySelectorAll(".product__qty");
+
+function isNumeric(str) {
+    if (typeof str != "string") return false // we only process strings!  
+    return !isNaN(str) && // use type coercion to parse the _entirety_ of the string (`parseFloat` alone does not do this)...
+           !isNaN(parseFloat(str)) // ...and ensure strings of whitespace fail
+}
+
+if ( productQtyInputs.length ){
+    productQtyInputs.forEach( (input) => {
+        IMask(
+            input, {
+                mask: Number,
+                min: 1,
+        });
+        
+        input.addEventListener('blur', function(){
+            if ( !isNumeric(this.value) ){
+                this.value = 1;
+            }
+        });
+
+        input.addEventListener('change', function(){
+            const value = +this.value;
+            if (value < 1) this.value = 1;
+        })
+    })
+}
+
 //8. КОНЕЦ: Маски
 
+//9. Range-slider
+const rangeSlider = document.getElementById('range-slider');
 
+
+if ( rangeSlider ){
+  
+    const minRange = document.querySelector('.min-range');   
+    const maxRange = document.querySelector('.max-range');  
+    
+    const minValue = Number( minRange.getAttribute('min') );
+    const maxValue = Number( maxRange.getAttribute('max') );
+    const stepRange = Number( maxRange.getAttribute('data-step') );
+
+    
+    
+    const filtersList = document.querySelector('.filters-list');
+
+
+  noUiSlider.create(rangeSlider, {
+      start: [minRange.value, maxRange.value],
+      connect: true,
+      range: {
+          'min': minValue,
+          'max': maxValue
+      },
+      step: stepRange,
+  
+      
+  });
+
+
+  minRange.addEventListener('input', function(){
+    let numMin = Number( this.value );
+    let numMax = Number( maxRange.value );
+    if (numMin > numMax) {
+      numMin = numMax
+
+      this.value = numMin;
+    }
+    rangeSlider.noUiSlider.set([numMin, null])
+    //createRangeTag([numMin, numMax]);
+  })
+
+  minRange.addEventListener('blur', function(){
+    
+    if (this.value.length === 0){
+      this.value = 0;
+    }
+
+    
+  })
+
+  maxRange.addEventListener('input', function(){
+    let numMin = Number( minRange.value );
+    let numMax = Number( this.value );
+    if (numMax < numMin) {
+      numMax = numMin
+
+      
+    }
+    rangeSlider.noUiSlider.set([null, numMax])
+    //createRangeTag([numMin, numMax]);
+  })
+
+  maxRange.addEventListener('blur', function(){
+    
+    if (this.value.length === 0){
+      this.value = maxValue;
+      rangeSlider.noUiSlider.set([null, maxValue])
+    }
+  })
+
+  rangeSlider.noUiSlider.on('slide', function () { 
+    let value = [Math.trunc(this.get()[0]), Math.trunc(this.get()[1])];
+    minRange.value = value[0];
+    maxRange.value = value[1];
+
+    const targetContainer = document.querySelector('.ranges-wrapper.tooltip-target');
+    
+            
+  });
+
+  IMask(
+    minRange, {
+      mask: Number,
+      min: minValue,
+      max: maxValue
+  });
+  
+  IMask(
+    maxRange, {
+      mask: Number,
+      min: minValue,
+      max: maxValue
+  });
+
+}
+//9. КОНЕЦ: Range-slider
+
+
+//10. Добавление в избранное
+const addToFavoriteBtns = document.querySelectorAll('.product__add-favorite');
+if ( addToFavoriteBtns.length ){
+    addToFavoriteBtns.forEach( btn => {
+        btn.addEventListener('click', function(){
+            const product = this.closest('.product');
+            if ( product.classList.contains('favorite') ){
+                product.classList.remove('favorite');
+            } else{
+                product.classList.add('favorite');
+            }
+        })
+    } )
+}
+
+
+//11. Увеличение товаров в карточке
+
+const productCardMinusBtns = document.querySelectorAll('.product__minus');
+const productCardPlusBtns = document.querySelectorAll('.product__plus');
+
+if ( productCardMinusBtns.length ){
+
+    productCardMinusBtns.forEach( btn => {
+        btn.addEventListener('click', function(){
+            let parent =  this.closest('.product__buy-block');
+            let inp = parent.querySelector('.product__qty');
+            let value = inp.value;
+            
+            if ( !isNumeric(value) ) {
+                inp.value = 1;
+            } else{
+                value = Number( value );
+                value--;
+                if (value < 1 ) value = 1
+                inp.value = value;
+            }
+        })
+    } )
+
+    productCardPlusBtns.forEach( btn => {
+        btn.addEventListener('click', function(){
+            let parent =  this.closest('.product__buy-block');
+            let inp = parent.querySelector('.product__qty');
+            let value = inp.value;
+            
+            if ( !isNumeric(value) ) {
+                inp.value = 1;
+            } else{
+                value = Number( value );
+                value++;
+                
+                inp.value = value;
+            }
+        })
+    } )
+}
+
+
+//12. Сортировка 
+
+const filterForm = document.querySelector('.filter');
+const filterWrap = document.querySelector('.filter-wrap');
+
+
+const sortPropBtns = document.querySelectorAll('.prod-sort__prop');
+sortPropBtns.forEach( btn => {
+    btn.addEventListener('click', function(){
+        if (!this.classList.contains('active')){
+            let activeBtn = document.querySelector('.prod-sort__prop.active');
+
+            if ( activeBtn ) activeBtn.classList.remove('active');
+
+            const target = this.getAttribute('data-target');
+            const value = this.getAttribute('data-value');
+
+            const targetInput = document.querySelector('.filter input[name="'+target+'"]');
+            targetInput.value = value;
+
+            this.classList.add('active');
+
+            filterForm.submit();
+        }
+    })
+})
+
+
+//13. Вид списка
+const viewModeBtns =  document.querySelectorAll('.view-mode');
+if  ( viewModeBtns.length ){
+    viewModeBtns.forEach( btn => {
+        btn.addEventListener('click',  function(){
+            const mode = this.getAttribute('data-mode');
+            const container = this.closest('.products-container');
+
+            container.setAttribute('data-mode', mode);
+        });
+    } )
+}
+
+//14 Фильтрация
+const uncheckFilterBtns = document.querySelectorAll('.selected-filter__uncheck');
+
+if ( uncheckFilterBtns.length ){
+    uncheckFilterBtns.forEach( btn => {
+
+        btn.addEventListener('click', function(){
+            const parent = this.closest('.selected-filter');
+            const fieldType = parent.getAttribute('data-type');
+            
+
+
+            if ( fieldType == 'switch'){
+                const target = parent.getAttribute('data-target');
+                document.querySelector(target).checked = false;
+            } 
+
+            if ( fieldType == 'range'){
+                const minValueLink = parent.getAttribute('data-min-target');
+                const maxValueLink = parent.getAttribute('data-max-target');
+                
+                const minValueNode = document.querySelector(minValueLink);                
+                minValueNode.value = minValueNode.getAttribute('min');
+                const maxValueNode = document.querySelector(maxValueLink);
+                maxValueNode.value = minValueNode.getAttribute('max');
+                
+            } 
+            filterForm.submit();
+        })
+        
+    })
+}
+
+const showMobFilter = document.querySelector('.show-mob-filter');
+const filterClose = document.querySelector('.filter__close');
+    if ( showMobFilter ){
+        showMobFilter.addEventListener('click', function(){
+            filterWrap.classList.add('show');
+        });
+
+        filterClose.addEventListener('click', function(){
+            filterWrap.classList.remove('show');
+        })
+    }
+    
+//КОНЕЦ: 14. Фильтрация

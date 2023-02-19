@@ -43,7 +43,7 @@ $offsets:(
 
 :root{
     --gutter-x: 12px;
-
+    --half-gutter-x: 6px;
     --section-x-padding: 12px;
 
     --header-vertical-padding: .25rem;
@@ -60,10 +60,13 @@ $offsets:(
     }
     @media (min-width: $md){
         --gutter-x: 16px;
+        --half-gutter-x: 8px;
+        
         --section-x-padding: 24px;
     }
     @media (min-width: $xl){
         --gutter-x: 24px;
+        --half-gutter-x: 12px;
         --section-x-padding: 80px;
     }
     
