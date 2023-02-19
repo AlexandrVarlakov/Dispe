@@ -250,7 +250,7 @@ if (tabs.length){
             if ( !this.classList.contains('active') ){
                 const family = this.getAttribute('data-family');
                 
-                const activeTab = document.querySelector('.tab.active[data-family="menu-categories"]');
+                const activeTab = document.querySelector('.tab.active[data-family="'+family+'"]');
                 console.log(activeTab);
                 if ( activeTab ){
                     const activeSheetLink = activeTab.getAttribute('data-target');
@@ -764,20 +764,73 @@ let slider = new Swiper(".recommend-slider", {
     slidesPerView: 1,
     spaceBetween: 50,
     loop: false,
-    pagination: {
-        el: '.pagination',
-        clickable: true,
-    },
+    
     navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: '.slider-nav.next',
+        prevEl: '.slider-nav.prev',
     },
     breakpoints: {
-        320: {
-            slidesPerView: 1,
-            spaceBetween: 40
+        200: {
+            slidesPerView: 2,
+            spaceBetween: 0
         },
-        800: {
+
+        680: {
+            slidesPerView: 1,
+            spaceBetween: 0
+        },
+        740: {
+            slidesPerView: 2,
+            spaceBetween: 0
+        },
+
+        992: {
+            slidesPerView: 2,
+            spaceBetween: 0
+        },
+        1200: {
+            slidesPerView: 3,
+            spaceBetween: 0
+        },
+        1600: {
+            slidesPerView: 4,
+            spaceBetween: 0
+        },
+        1800: {
+            slidesPerView: 5,
+            spaceBetween: 0
+        }
+    }
+})
+
+let hitsSlider = new Swiper(".slider-with-banner", {
+    speed: 1000,
+    /*autoplay: {
+        delay: 6000,
+    },*/
+    slidesPerView: 1,
+    spaceBetween: 50,
+    loop: false,
+    
+    breakpoints: {
+        
+        200: {
+            slidesPerView: 2,
+            spaceBetween: 0
+        },
+
+        720: {
+            slidesPerView: 3,
+            spaceBetween: 0
+        },
+
+        1600: {
+            slidesPerView: 4,
+            spaceBetween: 0
+        },
+
+
+        1700: {
             slidesPerView: 5,
             spaceBetween: 0
         }

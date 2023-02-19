@@ -293,15 +293,15 @@
 .subcategory__title-block{
     display: flex;
     align-items: center;
-
+    
     @media (min-width: $sm){
         flex-direction: column;
         align-items: flex-start;
 
-        
+        margin-bottom: 8px;    
     }
     @media (min-width: $lg){
-        margin-bottom: 8px;
+        
     }
 }
 
