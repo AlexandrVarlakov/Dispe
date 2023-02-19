@@ -752,3 +752,34 @@ const filterClose = document.querySelector('.filter__close');
     }
     
 //КОНЕЦ: 14. Фильтрация
+
+
+//Слайдер Рекоментуемое
+
+let slider = new Swiper(".recommend-slider", {
+    speed: 1000,
+    /*autoplay: {
+        delay: 6000,
+    },*/
+    slidesPerView: 1,
+    spaceBetween: 50,
+    loop: false,
+    pagination: {
+        el: '.pagination',
+        clickable: true,
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+        320: {
+            slidesPerView: 1,
+            spaceBetween: 40
+        },
+        800: {
+            slidesPerView: 5,
+            spaceBetween: 0
+        }
+    }
+})
