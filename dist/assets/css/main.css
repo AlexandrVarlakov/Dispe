@@ -12589,14 +12589,14 @@ input::-webkit-inner-spin-button {
   .big-product {
     margin-bottom: 100px;
     grid-gap: 40px 24px;
-    grid-template-columns: 40.833333333% 34.666666666% 20.333333333%;
+    grid-template-columns: 30.833333333% 39.666666666% 25.333333333%;
   }
 }
 @media (min-width: 1600px) {
   .big-product {
     margin-bottom: 124px;
     grid-gap: 48px 80px;
-    grid-template-columns: 37.5% 40.625% 15.625%;
+    grid-template-columns: 30.5% 47.625% 15.625%;
   }
 }
 
@@ -12632,7 +12632,7 @@ input::-webkit-inner-spin-button {
   left: 50%;
   top: 50%;
   max-width: 100%;
-  width: 100%;
+  width: auto;
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);

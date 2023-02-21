@@ -18,15 +18,16 @@
     @media (min-width: $xl){
         margin-bottom: 100px;
         grid-gap: 40px 24px;
-        grid-template-columns: 40.833333333%   34.666666666% 20.333333333%;
+        //grid-template-columns: 40.833333333%   34.666666666% 20.333333333%;
+        grid-template-columns: 30.833333333%   39.666666666% 25.333333333%;
         
     }
     
     @media (min-width: $xxl){
         margin-bottom: 124px;
         grid-gap: 48px 80px;
-        grid-template-columns: 37.5% 40.625% 15.625%;
-        
+        //grid-template-columns: 37.5% 40.625% 15.625%;
+        grid-template-columns: 30.5% 47.625% 15.625%;
     }
 }
 .bp-product-name.h1{
@@ -75,7 +76,7 @@
         left: 50%;
         top: 50%;
         max-width: 100%;
-        width: 100%;        
+        width: auto;        
         transform: translate(-50%, -50%);
     }
 
