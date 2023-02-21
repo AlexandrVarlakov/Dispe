@@ -12589,7 +12589,7 @@ input::-webkit-inner-spin-button {
   .big-product {
     margin-bottom: 100px;
     grid-gap: 40px 24px;
-    grid-template-columns: 30.833333333% 39.666666666% 25.333333333%;
+    grid-template-columns: 30.833333333% 44.666666666% 20.333333333%;
   }
 }
 @media (min-width: 1600px) {
