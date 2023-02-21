@@ -176,13 +176,21 @@ if ( spoilerHeader.length ){
 
     window.addEventListener('resize', function(){
         let spoilerBodyStyled = document.querySelectorAll('.spoiler-body[style]');
-        spoilerBodyStyled.forEach( sp => {
-            sp.removeAttribute('style');
-        });
-        let openHeaders = document.querySelectorAll('.spoiler-header.open');
-        openHeaders.forEach( oh => {
-            oh.classList.remove('open');
-        } )
+
+        const accordion = spoilerBodyStyled[0].closest('.accordion') ;
+
+        if ( accordion.getAttribute('data-place') === 'menu' ){
+            spoilerBodyStyled.forEach( sp => {
+                sp.removeAttribute('style');
+            });
+    
+            let openHeaders = document.querySelectorAll('.spoiler-header.open');
+            openHeaders.forEach( oh => {
+                oh.classList.remove('open');
+            } )
+        }
+
+        
     });
 
 
@@ -340,9 +348,28 @@ document.addEventListener('DOMContentLoaded', function(){
     styledHeader()
 })
 
+
+
+const productBottomMenu = document.querySelector('.product-bottom-menu');
+
+function showProductBottomMenu(){
+    let halfHeaderHeight = header.offsetHeight / 3;
+
+    if (window.pageYOffset > halfHeaderHeight ){
+        productBottomMenu.classList.add('show');
+    } else{
+        productBottomMenu.classList.remove('show');
+    }
+}
+
 window.addEventListener('scroll', function(){
     styledHeader()
     
+    if ( productBottomMenu ){
+        showProductBottomMenu()
+    }
+
+
 })
 //5. КОНЕЦ: header
 
@@ -476,6 +503,7 @@ if (phoneMasks.length){
 }
 
 const productQtyInputs = document.querySelectorAll(".product__qty");
+const bigProductQtyInputs = document.querySelectorAll(".big-product__qty");
 
 function isNumeric(str) {
     if (typeof str != "string") return false // we only process strings!  
@@ -503,7 +531,35 @@ if ( productQtyInputs.length ){
         })
     })
 }
+if ( bigProductQtyInputs.length ){
+    bigProductQtyInputs.forEach( (input) => {
+        IMask(
+            input, {
+                mask: Number,
+                min: 1,
+        });
+        
+        input.addEventListener('blur', function(){
+            if ( !isNumeric(this.value) ){
+                this.value = 1;
+            }
+        });
 
+        input.addEventListener('change', function(){
+            const value = +this.value;
+            if (value < 1) this.value = 1;
+            
+
+            bigProductQtyInputs.forEach( inp => {
+                inp.value = value;
+            })
+        })
+
+        input.addEventListener('input', function(){
+            
+        })
+    })
+}
 //8. КОНЕЦ: Маски
 
 //9. Range-slider
@@ -612,11 +668,22 @@ if ( addToFavoriteBtns.length ){
     addToFavoriteBtns.forEach( btn => {
         btn.addEventListener('click', function(){
             const product = this.closest('.product');
-            if ( product.classList.contains('favorite') ){
-                product.classList.remove('favorite');
+            if ( product ){
+                if ( product.classList.contains('favorite') ){
+                    product.classList.remove('favorite');
+                } else{
+                    product.classList.add('favorite');
+                }
             } else{
-                product.classList.add('favorite');
+                const product = this.closest('.big-product');
+                if ( product.classList.contains('favorite') ){
+                    product.classList.remove('favorite');
+                } else{
+                    product.classList.add('favorite');
+                }
             }
+            
+            
         })
     } )
 }
@@ -626,6 +693,9 @@ if ( addToFavoriteBtns.length ){
 
 const productCardMinusBtns = document.querySelectorAll('.product__minus');
 const productCardPlusBtns = document.querySelectorAll('.product__plus');
+
+const bigProductCardMinusBtns = document.querySelectorAll('.big-product__minus');
+const bigProductCardPlusBtns = document.querySelectorAll('.big-product__plus');
 
 if ( productCardMinusBtns.length ){
 
@@ -659,6 +729,49 @@ if ( productCardMinusBtns.length ){
                 value++;
                 
                 inp.value = value;
+            }
+        })
+    } )
+}
+
+if ( bigProductCardMinusBtns.length ){
+
+    bigProductCardMinusBtns.forEach( btn => {
+        btn.addEventListener('click', function(){
+            let parent =  this.closest('.big-product__buy-block');
+            let inp = parent.querySelector('.big-product__qty');
+            let value = inp.value;
+            
+            if ( !isNumeric(value) ) {
+                inp.value = 1;
+            } else{
+                value = Number( value );
+                value--;
+                if (value < 1 ) value = 1
+                inp.value = value;
+                bigProductQtyInputs.forEach( inp => {
+                    inp.value = value;
+                })
+            }
+        })
+    } )
+
+    bigProductCardPlusBtns.forEach( btn => {
+        btn.addEventListener('click', function(){
+            let parent =  this.closest('.big-product__buy-block');
+            let inp = parent.querySelector('.big-product__qty');
+            let value = inp.value;
+            
+            if ( !isNumeric(value) ) {
+                inp.value = 1;
+            } else{
+                value = Number( value );
+                value++;
+                
+                inp.value = value;
+                bigProductQtyInputs.forEach( inp => {
+                    inp.value = value;
+                })
             }
         })
     } )
@@ -836,3 +949,4 @@ let hitsSlider = new Swiper(".slider-with-banner", {
         }
     }
 })
+

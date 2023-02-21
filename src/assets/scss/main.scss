@@ -459,6 +459,9 @@ main{
 
 @import 'units/menus/catalog-menu';
 @import 'units/menus/hamburger-menu';
+@import 'units/menus/product-bottom-menu';
+
+
 @import 'units/breadcrumbs/breadcrumbs';
 @import 'units/footer/footer';
 @import 'units/header/header';
@@ -466,6 +469,7 @@ main{
 @import 'units/faq/faq';
 @import 'units/products/filter';
 @import 'units/products/products';
+@import 'units/products/big-product';
 @import 'units/products/pagination';
 @import 'units/modals/faq-modal';
 @import 'units/modals/thanks-modal';
