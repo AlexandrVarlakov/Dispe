@@ -12,7 +12,6 @@
 */
 
 
-
 //1.Форма поиска
 const searchInputs = document.querySelectorAll('.search-form > input');
 
@@ -177,18 +176,21 @@ if ( spoilerHeader.length ){
     window.addEventListener('resize', function(){
         let spoilerBodyStyled = document.querySelectorAll('.spoiler-body[style]');
 
-        const accordion = spoilerBodyStyled[0].closest('.accordion') ;
+        if ( spoilerBodyStyled.length ){
+            const accordion = spoilerBodyStyled[0].closest('.accordion') ;
 
-        if ( accordion.getAttribute('data-place') === 'menu' ){
-            spoilerBodyStyled.forEach( sp => {
-                sp.removeAttribute('style');
-            });
-    
-            let openHeaders = document.querySelectorAll('.spoiler-header.open');
-            openHeaders.forEach( oh => {
-                oh.classList.remove('open');
-            } )
+            if ( accordion.getAttribute('data-place') === 'menu' ){
+                spoilerBodyStyled.forEach( sp => {
+                    sp.removeAttribute('style');
+                });
+        
+                let openHeaders = document.querySelectorAll('.spoiler-header.open');
+                openHeaders.forEach( oh => {
+                    oh.classList.remove('open');
+                } )
+            }
         }
+        
 
         
     });
@@ -950,3 +952,56 @@ let hitsSlider = new Swiper(".slider-with-banner", {
     }
 })
 
+let mainSlider = new Swiper(".main-slider", {
+    speed: 1000,
+    
+    slidesPerView: 1,
+    spaceBetween: 50,
+    
+    pagination: {
+        el: '.main-slider__pagination',
+        clickable: true,
+    },
+    
+    
+})
+
+let distSlider =  new Swiper(".distribution", {
+    speed: 1000,
+    
+    slidesPerView: "auto",
+    autoplay: {
+        delay: 6000,
+    },
+    loop: true,
+    navigation: {
+        nextEl: '.dist-nav.next',
+        prevEl: '.dist-nav.prev',
+    },
+    breakpoints: {
+        200: {
+            slidesPerView: "auto",
+            spaceBetween: 12,
+        },
+
+        680: {
+            slidesPerView: "auto",
+            spaceBetween: 16
+        },
+
+        992: {
+            slidesPerView: 4,
+            spaceBetween: 24
+        },
+
+        1300: {
+            slidesPerView: 5,
+            spaceBetween: 24
+        },
+        1600: {
+            slidesPerView: 8,
+            spaceBetween: 24
+        }
+    }
+    
+})
