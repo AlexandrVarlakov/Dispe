@@ -11,6 +11,27 @@
 		padding: 32px var(--section-x-padding) 16px;
 	}
 }
+.header.green-mode{
+    .search-form input{
+        background-color: #fff;
+    }
+    .user-btn{
+        outline: 1px solid #fff;
+    }
+}
+
+
+
+.header.scrolled.green-mode{
+    .search-form input{
+        background-color: #E8F0F2;
+    }
+
+    .user-btn{
+        outline: #E8F0F2 solid 1px;
+    }
+}
+
 
 .header.scrolled{
     background-color: #fff;
@@ -20,6 +41,13 @@
 	
 }
 
+.header.scrolled.hide-shadow{
+
+    @media (max-width: $sm){
+        box-shadow: none;
+    }
+    
+}
 
 .header__inner{
 	

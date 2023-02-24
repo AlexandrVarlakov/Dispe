@@ -1,4 +1,4 @@
-.product-bottom-menu{
+.tablet-bottom-menu{
     background-color: $gray-light;
     
     display: flex;
@@ -39,7 +39,7 @@
     }
 }
 
-.product-bottom-menu.show{
+.tablet-bottom-menu.show{
     @media (min-width: $sm) AND (max-width: $lg){
         display: flex !important;
 

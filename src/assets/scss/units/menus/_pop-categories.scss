@@ -64,8 +64,14 @@
 
     position: relative;
     z-index: 1;
-    transition: 300ms 300ms;
+    transition: 200ms 300ms;
     color: #1C2527;
+
+    p{
+        transition: 200ms 300ms;
+    }
+
+
     @media (min-width: $sm){
         padding: 16px;
         font-size: 1rem;
@@ -78,13 +84,13 @@
     &::before{
         content: "";
         position: absolute;
-        top: 0;
-        left: 0;
+        top: 50%;
+        left: 50%;
         width: 0px;
         height: 0px;
         transform: translate(-50%, -50%) rotate(45deg);
         transition: 1000ms ease-out;
-        //border-radius: 50%;
+        border-radius: 50%;
         background-color: $blue;
         z-index: -1;
 
@@ -108,15 +114,15 @@
         color: #fff;
         
     &::before{
-            width: 1000px;
-            height: 1000px;
+            width: 50vw;
+            height: 50vw;
             transition: 700ms ease-in-out;
             
         }
         &::after{
-            width: 1000px;
-            height: 1000px;
-            transition: 700ms 150ms ease-in-out;
+            //width: 1000px;
+            //height: 1000px;
+            //transition: 700ms 150ms ease-in-out;
             
         }
     }
