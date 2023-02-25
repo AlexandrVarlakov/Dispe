@@ -370,7 +370,7 @@ section.section.main-slider-section{
             padding-right: 8%;
         }
         @media (min-width: $lg){
-            font-size: 20px;
+            font-size: 1.25rem;
             margin-bottom: 20px;
         }
         @media (min-width: $xxl){
@@ -384,7 +384,7 @@ section.section.main-slider-section{
             padding-right: 8%;
         }
         @media (min-width: $lg){
-            font-size: 20px;
+            font-size: 1.25rem;
         }
         @media (min-width: $xxl){
             margin-bottom: 24px;
@@ -392,10 +392,10 @@ section.section.main-slider-section{
     }
     .button.button-green{
         padding: 20px 16px;
-        font-size: 12px;
+        font-size: .75rem;
         width: 100%;
         @media (min-width: $sm){
-            font-size: 14px;
+            font-size: .8125rem;
             padding: 22px 18px;
         }
         @media (min-width: $lg){

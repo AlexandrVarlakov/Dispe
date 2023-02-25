@@ -16,7 +16,7 @@
         <section class="section mb-8 mb-sm-10 mb-lg-12 pb-lg-5 pb-xxl-8">
             <div class="section__inner">
                 <h1 class="h1">Вопрос ответ</h1>
-                <button class="button button-green w-100 w-sm-auto mb-sm-2 mb-lg-6" data-role="call-modal" data-target=".faq-modal">
+                <button class="button button-green w-100 w-sm-auto mb-sm-2 mb-lg-6" data-role="call-modal" data-target=".modal[data-name='faq-modal']">
                     Задать вопрос
                         
                 </button>
@@ -154,7 +154,7 @@
         </section>
     </main>
     
-    <div class="faq-modal">
+    <div class="modal" data-name="faq-modal">
 
         <button class="close-btn">
             <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">                        
@@ -199,11 +199,8 @@
             </div>
         
     </div>
-
-    <div class="thanks-modal">
-        <img src="assets/img/logo.svg" alt="" class="mb-4">
-        <h3 class="h3">Спасибо! <br />Ваша заявка принята</h3>
-        
-    </div>
+    @@include('templates/auth-modal.html')
+    @@include('templates/partner-modal.html')
+    @@include('templates/thanks-modal.html')
     @@include('templates/footer.html')
 @@include('templates/foot.html')

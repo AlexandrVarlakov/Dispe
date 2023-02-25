@@ -62,7 +62,7 @@
     
     
     line-height: 1.35;
-    font-size: 12px;
+    font-size: .75rem;
     font-weight: 700;
     text-transform: uppercase;  
     color: #FFFFFF;
@@ -94,7 +94,7 @@
         padding: var(--header-vertical-padding) 2rem;
     }
     @media (min-width: $xxl){
-        font-size: 14px;
+        font-size: .875rem;
         font-weight: 800;
     }
 }

@@ -49,7 +49,7 @@
                         </button>
                     </form>
 
-                    <a href="#" class="user-btn">
+                    <button data-role="call-modal" data-target=".modal[data-name='auth-modal']" class="user-btn">
                         <span class="user-btn__icon">
                             <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M16 28C22.6274 28 28 22.6274 28 16C28 9.37258 22.6274 4 16 4C9.37258 4 4 9.37258 4 16C4 22.6274 9.37258 28 16 28Z" stroke="#1C2527" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -60,7 +60,7 @@
                         <span class="user-btn__text">
                             Личный кабинет
                         </span>
-                    </a>
+                    </button>
                     <a href="#" class="user-btn">
                         <span class="user-btn__icon">
                             <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -158,7 +158,7 @@
                                         </a>
                                     </div>
                                     <div class="main-slide__img-block">
-                                        <img src="assets/img/main-slider/1.png" alt="" class="main-slide__img">
+                                        <img src="assets/img/main-slider/2.png" alt="" class="main-slide__img">
                                         
                                     </div>
                                 </div>
@@ -260,7 +260,7 @@
                     </div>
                     <div class="i-partner-banner__button-block">
     
-                        <button href="#" class="i-partner-banner__button">
+                        <button href="#" class="i-partner-banner__button" data-role="call-modal" data-target=".modal[data-name='partner-modal']">
                             Подать заявку
                             <img src="assets/img/icons/button-arrow.svg" alt="">
                         </button>
@@ -280,7 +280,7 @@
                         
                         <div class="test-img">
                             <div class="test-img__inner">
-                                <img src="assets/img/products/1.png" alt="">
+                                <img src="assets/img/category-img/5.png" alt="">
                             </div>
                         </div>
 
@@ -290,7 +290,7 @@
 
                         <div class="test-img ">
                             <div class="test-img__inner">
-                                <img src="assets/img/products/2.png" alt="">
+                                <img src="assets/img/category-img/6.png" alt="">
                             </div>
                         </div>
                     </a>
@@ -299,15 +299,15 @@
 
                         <div class="test-img">
                             <div class="test-img__inner">
-                                <img src="assets/img/products/3.png" alt="">
+                                <img src="assets/img/category-img/7.png" alt="">
                             </div>
                         </div>
                     </a>
                     <a href="#" class="pop-categories__item pop-categories__item-4">
                         <p>Датчики</p>
-                        <div class="test-img big">
+                        <div class="test-img">
                             <div class="test-img__inner">
-                                <img src="assets/img/products/4.png" alt="">
+                                <img src="assets/img/category-img/8.png" alt="">
                             </div>
                         </div>
                     </a>
@@ -315,7 +315,7 @@
                         <p>Предохранители</p>
                         <div class="test-img">
                             <div class="test-img__inner">
-                                <img src="assets/img/products/1.png" alt="">
+                                <img src="assets/img/category-img/9.png" alt="">
                             </div>
                         </div>
                     </a>
@@ -323,7 +323,7 @@
                         <p>Резисторы</p>
                         <div class="test-img">
                             <div class="test-img__inner">
-                                <img src="assets/img/products/2.png" alt="">
+                                <img src="assets/img/category-img/10.png" alt="">
                             </div>
                         </div>
                     </a>
@@ -2062,6 +2062,11 @@
         </section>
     </main>
     
+    
+
+    @@include('templates/auth-modal.html')
+    @@include('templates/partner-modal.html')
+    @@include('templates/thanks-modal.html')
 
     @@include('templates/footer.html')
 @@include('templates/foot.html')

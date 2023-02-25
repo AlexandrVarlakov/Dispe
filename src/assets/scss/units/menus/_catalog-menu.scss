@@ -167,6 +167,27 @@
     }
 }
 
+[data-name="auth-modal"]{
+    .cat-sheet{
+        &:not(:first-of-type){
+            margin-top: 24px;
+    
+            @media (min-width: $sm){
+                margin-top: 0px;
+            }
+        }
+        display: none;
+        
+    }
+    
+    .cat-sheet.active{
+        
+        display: block;
+        
+    }	
+}
+
+
 .cat-sheet__title-block{
     display: flex;
     align-items: center;

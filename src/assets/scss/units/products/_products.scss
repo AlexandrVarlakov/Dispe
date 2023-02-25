@@ -85,7 +85,7 @@
 .product__tag{
     font-family: $nunito;
     font-weight: 700;
-    font-size: 10px;
+    font-size: .625rem;
     line-height: 1.4;
     color: #FFFFFF;
     display: inline-block;
@@ -99,7 +99,7 @@
     
 
     @media (min-width: $sm){
-        font-size: 13px;
+        font-size: .8125rem;
     }
 
    
@@ -145,7 +145,7 @@
 
 .product__available-text {
     font-weight: 600;
-    font-size: 13px;
+    font-size: .8125rem;
     line-height: 1.35;
     color: #61BE5F;
     .qty{
@@ -153,7 +153,7 @@
     }
     
     @media (min-width: $sm){
-        font-size: 16px;
+        font-size: 1rem;
         .qty{
             display: inline-block;
         }
@@ -267,7 +267,7 @@
 }
 .product__opt-price{    
     font-weight: 600;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 1.35;
     color: $gray;
     display: none;
@@ -403,7 +403,7 @@
         width: 50%;
     }
     .button{
-        font-size: 14px;
+        font-size: .8125rem;
         height: 100%;
         padding: 8px;
         width: 100%;
@@ -854,7 +854,7 @@
     gap: 0 10px;    
     font-family: $nunito;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 1.35;
     color: $blue-dark;
     flex-shrink: 0;
@@ -1113,7 +1113,7 @@
 
 .c-product__cart-buy-block{
     .error{
-        font-size: 13px !important;
+        font-size: .8125rem !important;
         color: $gray;
 
         @media (min-width: $xxl){

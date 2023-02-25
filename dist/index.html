@@ -60,7 +60,7 @@
                         </button>
                     </form>
 
-                    <a href="#" class="user-btn">
+                    <button data-role="call-modal" data-target=".modal[data-name='auth-modal']" class="user-btn">
                         <span class="user-btn__icon">
                             <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M16 28C22.6274 28 28 22.6274 28 16C28 9.37258 22.6274 4 16 4C9.37258 4 4 9.37258 4 16C4 22.6274 9.37258 28 16 28Z" stroke="#1C2527" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -71,7 +71,7 @@
                         <span class="user-btn__text">
                             Личный кабинет
                         </span>
-                    </a>
+                    </button>
                     <a href="#" class="user-btn">
                         <span class="user-btn__icon">
                             <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1039,14 +1039,14 @@
                                 к сотрудничеству производителей
                                 и дистрибьютеров</p>
 
-                            <a href="#" class="btn-white">
+                            <button class="btn-white" data-role="call-modal" data-target=".modal[data-name='partner-modal']">
                                 Подать заявку
                                 <svg width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon">
                                     <path d="M13 3.5L17 7.5L13 11.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     <path d="M1 7.5H4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     <path d="M8 7.5L15 7.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
-                            </a>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -1112,7 +1112,7 @@
             </span>
         </a>
 
-        <a href="#" class="user-btn">
+        <button  class="user-btn" data-role="call-modal" data-target=".modal[data-name='auth-modal']">
             <span class="user-btn__icon">
                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M16 28C22.6274 28 28 22.6274 28 16C28 9.37258 22.6274 4 16 4C9.37258 4 4 9.37258 4 16C4 22.6274 9.37258 28 16 28Z" stroke="#1C2527" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1123,7 +1123,7 @@
             <span class="user-btn__text">
                 Профиль
             </span>
-        </a>
+        </button>
     </div>
 </div>
         
@@ -1170,7 +1170,7 @@
                                         </a>
                                     </div>
                                     <div class="main-slide__img-block">
-                                        <img src="assets/img/main-slider/1.png" alt="" class="main-slide__img">
+                                        <img src="assets/img/main-slider/2.png" alt="" class="main-slide__img">
                                         
                                     </div>
                                 </div>
@@ -1272,7 +1272,7 @@
                     </div>
                     <div class="i-partner-banner__button-block">
     
-                        <button href="#" class="i-partner-banner__button">
+                        <button href="#" class="i-partner-banner__button" data-role="call-modal" data-target=".modal[data-name='partner-modal']">
                             Подать заявку
                             <img src="assets/img/icons/button-arrow.svg" alt="">
                         </button>
@@ -1292,7 +1292,7 @@
                         
                         <div class="test-img">
                             <div class="test-img__inner">
-                                <img src="assets/img/products/1.png" alt="">
+                                <img src="assets/img/category-img/5.png" alt="">
                             </div>
                         </div>
 
@@ -1302,7 +1302,7 @@
 
                         <div class="test-img ">
                             <div class="test-img__inner">
-                                <img src="assets/img/products/2.png" alt="">
+                                <img src="assets/img/category-img/6.png" alt="">
                             </div>
                         </div>
                     </a>
@@ -1311,15 +1311,15 @@
 
                         <div class="test-img">
                             <div class="test-img__inner">
-                                <img src="assets/img/products/3.png" alt="">
+                                <img src="assets/img/category-img/7.png" alt="">
                             </div>
                         </div>
                     </a>
                     <a href="#" class="pop-categories__item pop-categories__item-4">
                         <p>Датчики</p>
-                        <div class="test-img big">
+                        <div class="test-img">
                             <div class="test-img__inner">
-                                <img src="assets/img/products/4.png" alt="">
+                                <img src="assets/img/category-img/8.png" alt="">
                             </div>
                         </div>
                     </a>
@@ -1327,7 +1327,7 @@
                         <p>Предохранители</p>
                         <div class="test-img">
                             <div class="test-img__inner">
-                                <img src="assets/img/products/1.png" alt="">
+                                <img src="assets/img/category-img/9.png" alt="">
                             </div>
                         </div>
                     </a>
@@ -1335,7 +1335,7 @@
                         <p>Резисторы</p>
                         <div class="test-img">
                             <div class="test-img__inner">
-                                <img src="assets/img/products/2.png" alt="">
+                                <img src="assets/img/category-img/10.png" alt="">
                             </div>
                         </div>
                     </a>
@@ -3074,6 +3074,137 @@
         </section>
     </main>
     
+    
+
+    <div class="modal feedback-modal" data-name="auth-modal">
+
+    <button class="close-btn">
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">                        
+            <path d="M40 8L8 40" stroke="#A4ACAE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M40 40L8 8" stroke="#A4ACAE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>                        
+        </svg>
+    </button>
+
+    
+        
+    <div class="swiped-tab-list auth pb-0 pb-sm-7">
+        <div class="swiped-tab-list__inner">
+            <ul>
+                <li class="swiped-tab-list__tab tab active" data-target="#auth-sheet-form" data-family="auth-modal">Вход</li>
+                <li class="swiped-tab-list__tab tab " data-target="#registration-sheet-form" data-family="auth-modal">Регистрация</li>
+                
+            </ul>
+            
+        </div>
+        
+    </div>
+    <div class="cat-sheet active" id="auth-sheet-form">
+        <form action="login.php" >
+                
+            <input type="text" class="input mb-1 mb-sm-3 mb-lg-5" name="login" placeholder="E-mail или телефон" required >
+            <input type="password" class="input mb-1 mb-sm-3 mb-lg-8" name="password" placeholder="Пароль" required>
+
+            <button class="button button-green w-100">
+                Войти
+                <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13 3L17 7L13 11" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M1 7H4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M8 7L15 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                    
+            </button>
+            
+            
+        
+        </form>
+    </div>
+    <div class="cat-sheet" id="registration-sheet-form">
+        <form action="registration.php" >
+                
+            <input type="text" class="input mb-1 mb-sm-3 mb-lg-5" name="name" placeholder="Ваше имя*" required >
+            <input type="text" class="input mb-1 mb-sm-3 mb-lg-5" name="company" placeholder="Название организации*" required >
+            <input type="text" class="input mb-1 mb-sm-3 mb-lg-5" name="inn" placeholder="ИНН*" required >
+            <input type="text" class="input mb-1 mb-sm-3 mb-lg-5" name="ogrn" placeholder="ОГРН*" required >
+            <input type="email" class="input mb-1 mb-sm-3 mb-lg-5" name="email" placeholder="Email*" required >
+            <input type="tel" class="input mb-4 mb-lg-5" name="phone" placeholder="+7 (___) ___ - __ - __*" required >
+            
+            <button class="button button-green-border w-100 mb-4 mb-lg-7">Подтвердить телефон</button>
+
+            <input type="password" class="input mb-1 mb-sm-3 mb-lg-5" name="password" placeholder="Придумайте пароль" required>
+            <input type="password" class="input mb-1 mb-sm-3 mb-lg-5" name="password" placeholder="Повторите пароль" required>
+
+            <div class="captcha-line mb-4 mb-lg-7">
+                <div class="captcha-container">
+                    <img src="assets/img/recaptcha.png" alt="">
+                </div>
+            </div>
+
+            <button class="button button-green w-100 mb-4 mb-lg-8">
+                Зарегестрироваться
+                <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13 3L17 7L13 11" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M1 7H4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M8 7L15 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                    
+            </button>
+            
+            <p class="text text-black">Регистрируясь, вы принимаете <a href="#" class="md-link">условия обработки персональных данных</a></p>
+        
+        </form>
+    </div>
+
+    
+    
+</div>
+    <div class="modal feedback-modal" data-name="partner-modal">
+
+    <button class="close-btn">
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">                        
+            <path d="M40 8L8 40" stroke="#A4ACAE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M40 40L8 8" stroke="#A4ACAE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>                        
+        </svg>
+    </button>
+
+    
+        <div class="mb-4 mb-sm-6 mb-xl-10">
+            <h2 class="h2 mb-1 mb-sm-6 mb-xl-10">Хотите с нами сотрудничать?</h2>
+            <h3 class="h3 text-center ">Напишите нам и наши менеджеры свяжуться с вами</h3>
+        </div>
+        <div >
+            <form action="script.php" >
+                
+                    <input type="text" class="input mb-1 mb-sm-3 mb-lg-5" name="name" placeholder="Ваше имя" required >
+                    <input type="text" class="input mb-1 mb-sm-3 mb-lg-5" name="phone" placeholder="Ваш телефон" required>
+                    
+                    <div class="faq-textarea mb-1 mb-sm-3 mb-lg-5">
+                        <textarea name="text" class="textarea" placeholder="Вопрос"></textarea>
+                    </div>
+                    
+                    
+                    
+                    
+                    <button class="button button-green w-100">
+                        Отправить
+                        <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13 3L17 7L13 11" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M1 7H4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M8 7L15 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                            
+                    </button>
+                    
+                    
+                
+            </form>
+        </div>
+    
+</div>
+    <div class="thanks-modal">
+    <img src="assets/img/logo.svg" alt="" class="mb-4">
+    <h3 class="h3">Спасибо! <br />Ваша заявка принята</h3>
+    
+</div>
 
     <footer class="footer">
     <img src="assets/img/footer-decoration.svg" alt="" class="footer__decor-1">

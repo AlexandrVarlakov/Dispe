@@ -1100,4 +1100,16 @@ if ( cProductQtyInputs.length ){
 }
 
 
+                
+
+
+const authModalTabs = document.querySelectorAll('[data-family="auth-modal"]');
+if ( authModalTabs.length ){
+    authModalTabs.forEach( btn => {
+        btn.addEventListener('click', function(){
+            const event = new Event('resize');
+            window.dispatchEvent(event);
+        });
+    })
+}
 

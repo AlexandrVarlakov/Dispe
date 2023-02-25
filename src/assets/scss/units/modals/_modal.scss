@@ -1,4 +1,4 @@
-.faq-modal{
+.modal{
 
     display: none;
 
@@ -43,4 +43,25 @@
             top: 32px;
         }
     }
+}
+
+
+.modal.feedback-modal{
+    width: 100%;
+    @media (min-width: $sm){
+        width: 83.333333333%;
+        
+    }
+    @media (min-width: $lg){
+        width: 100%;
+        max-width: 730px;
+    }
+
+    @media (min-width: $xxl){
+        width: 75%;
+    }   
+}
+
+.modal[data-name="auth-modal"]{
+    padding-top: 80px;
 }
