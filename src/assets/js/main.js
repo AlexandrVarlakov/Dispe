@@ -984,6 +984,8 @@ let hitsSlider = new Swiper(".slider-with-banner", {
     }
 })
 
+let mainSliderCircles = document.querySelector('.main-slider-wrapper__circles');
+
 let mainSlider = new Swiper(".main-slider", {
     speed: 1000,
     
@@ -996,6 +998,14 @@ let mainSlider = new Swiper(".main-slider", {
     },
     
     
+    
+})
+mainSlider.on('slideChange', function () {
+    
+    mainSliderCircles.classList.add('hide');
+});
+mainSlider.on('slideChangeTransitionEnd', function () {
+    mainSliderCircles.classList.remove('hide');
 })
 
 let distSlider =  new Swiper(".distribution", {

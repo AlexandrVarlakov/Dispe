@@ -459,6 +459,197 @@ section.section.main-slider-section{
         padding-top: 80px;
     }
 }
+.main-slider-wrapper__circle-1{        
+    border: 1px solid #fff;
+}
+
+.main-slider-wrapper__circle-2{        
+    border: 1px solid #fff;
+}
+.main-slider-wrapper__circle-3{        
+    border: 1px solid $blue;
+}
+.main-slider-wrapper__circle-4{        
+    border: 3px solid $blue;
+}
+.main-slider-wrapper__circle-5{        
+    border: 1px solid $blue;
+}
+
+.main-slider-wrapper__circles.active{
+    .main-slider-wrapper__circle{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .main-slider-wrapper__circle-1{
+        
+        
+
+        animation: showCircle-1 1800ms 0ms linear forwards;
+        
+    }
+
+    .main-slider-wrapper__circle-2{
+        
+        
+        animation: showCircle-2 1400ms 400ms linear forwards;
+    }
+    .main-slider-wrapper__circle-3{
+       
+        
+        animation: showCircle-3 1100ms 700ms linear forwards;
+    }
+    .main-slider-wrapper__circle-4{
+        
+        
+        animation: showCircle-4 800ms 1000ms linear forwards;
+    }
+    .main-slider-wrapper__circle-5{
+        
+        
+        animation: showCircle-5 600ms 1200ms linear forwards;
+    }
+}
+
+
+.main-slider-wrapper__circles.active.hide{
+    .main-slider-wrapper__circle-1{        
+        animation: hideCircle-1 400ms forwards;        
+    }
+
+    .main-slider-wrapper__circle-2{
+        animation: hideCircle-2 400ms forwards;
+    }
+    .main-slider-wrapper__circle-3{
+        animation: hideCircle-3 400ms forwards;
+
+    }
+    .main-slider-wrapper__circle-4{
+        animation: hideCircle-4 400ms forwards;
+    }
+    .main-slider-wrapper__circle-5{
+        animation: hideCircle-5 400ms forwards;
+    }
+}
+
+
+
+
+.main-slider-wrapper__circle{
+    width: 0%;
+    height: 0%;
+}
+
+@keyframes showCircle-1 {
+    to{
+        width: 100%;
+        height: 100%;
+    }
+}
+@keyframes showCircle-2 {
+    to{
+        width: 66.66666%;
+        height: 66.66666%;
+    }
+}
+@keyframes showCircle-3 {
+    to{
+        width: 45%;
+        height: 45%;
+    }
+}
+@keyframes showCircle-4 {
+    to{
+        width: 33%;
+        height: 33%;
+    }
+}
+@keyframes showCircle-5 {
+    to{
+        width: 28%;
+        height: 28%;
+    }
+}
+
+@keyframes hideCircle-1 {
+    0%{
+        width: 100%;
+        height: 100%;
+    }
+    99%{
+        width: 0%;
+        height: 0%;
+    }
+    100%{
+        width: 0%;
+        height: 0%;
+        opacity: 0;
+    }
+}
+@keyframes hideCircle-2 {
+    0%{
+        width: 66.66666%;
+        height: 66.66666%;
+    }
+    99%{
+        width: 0%;
+        height: 0%;
+    }
+    100%{
+        width: 0%;
+        height: 0%;
+        opacity: 0;
+    }
+}
+@keyframes hideCircle-3 {
+    0%{
+        width: 33%;
+        height: 33%;
+    }
+    99%{
+        width: 0%;
+        height: 0%;
+    }
+    100%{
+        width: 0%;
+        height: 0%;
+        opacity: 0;
+    }
+}
+@keyframes hideCircle-4 {
+    0%{
+        width: 33%;
+        height: 33%;
+    }
+    99%{
+        width: 0%;
+        height: 0%;
+    }
+    100%{
+        width: 0%;
+        height: 0%;
+        opacity: 0;
+    }
+}
+@keyframes hideCircle-5 {
+    0%{
+        width: 28%;
+        height: 28%;
+    }
+    99%{
+        width: 0%;
+        height: 0%;
+    }
+    100%{
+        width: 0%;
+        height: 0%;
+        opacity: 0;
+    }
+}
 
 .main-slider-wrapper__circles{
     position: absolute;

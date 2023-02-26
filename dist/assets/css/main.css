@@ -9249,6 +9249,18 @@ label {
 .pop-categories__item p {
   position: relative;
   z-index: 10;
+  -webkit-transition-property: color, text-shadow;
+  -o-transition-property: color, text-shadow;
+  transition-property: color, text-shadow;
+  -webkit-transition-duration: 300ms, 0ms;
+       -o-transition-duration: 300ms, 0ms;
+          transition-duration: 300ms, 0ms;
+  -webkit-transition-delay: 300ms, 1000ms;
+       -o-transition-delay: 300ms, 1000ms;
+          transition-delay: 300ms, 1000ms;
+  -webkit-transition-timing-function: ease-out;
+       -o-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
 }
 .pop-categories__item:hover p {
   text-shadow: 0 0 2px #1C2527;
@@ -11730,11 +11742,6 @@ button.swiper-pagination-bullet {
   -o-transition: 200ms 300ms;
   transition: 200ms 300ms;
   color: #1C2527;
-}
-.pop-categories__item p {
-  -webkit-transition: 200ms 300ms;
-  -o-transition: 200ms 300ms;
-  transition: 200ms 300ms;
 }
 @media (min-width: 680px) {
   .pop-categories__item {
@@ -16934,6 +16941,293 @@ section.section.main-slider-section::before {
   }
 }
 
+.main-slider-wrapper__circle-1 {
+  border: 1px solid #fff;
+}
+
+.main-slider-wrapper__circle-2 {
+  border: 1px solid #fff;
+}
+
+.main-slider-wrapper__circle-3 {
+  border: 1px solid #24C0EB;
+}
+
+.main-slider-wrapper__circle-4 {
+  border: 3px solid #24C0EB;
+}
+
+.main-slider-wrapper__circle-5 {
+  border: 1px solid #24C0EB;
+}
+
+.main-slider-wrapper__circles.active .main-slider-wrapper__circle {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+.main-slider-wrapper__circles.active .main-slider-wrapper__circle-1 {
+  -webkit-animation: showCircle-1 1800ms 0ms linear forwards;
+          animation: showCircle-1 1800ms 0ms linear forwards;
+}
+.main-slider-wrapper__circles.active .main-slider-wrapper__circle-2 {
+  -webkit-animation: showCircle-2 1400ms 400ms linear forwards;
+          animation: showCircle-2 1400ms 400ms linear forwards;
+}
+.main-slider-wrapper__circles.active .main-slider-wrapper__circle-3 {
+  -webkit-animation: showCircle-3 1100ms 700ms linear forwards;
+          animation: showCircle-3 1100ms 700ms linear forwards;
+}
+.main-slider-wrapper__circles.active .main-slider-wrapper__circle-4 {
+  -webkit-animation: showCircle-4 800ms 1000ms linear forwards;
+          animation: showCircle-4 800ms 1000ms linear forwards;
+}
+.main-slider-wrapper__circles.active .main-slider-wrapper__circle-5 {
+  -webkit-animation: showCircle-5 600ms 1200ms linear forwards;
+          animation: showCircle-5 600ms 1200ms linear forwards;
+}
+
+.main-slider-wrapper__circles.active.hide .main-slider-wrapper__circle-1 {
+  -webkit-animation: hideCircle-1 400ms forwards;
+          animation: hideCircle-1 400ms forwards;
+}
+.main-slider-wrapper__circles.active.hide .main-slider-wrapper__circle-2 {
+  -webkit-animation: hideCircle-2 400ms forwards;
+          animation: hideCircle-2 400ms forwards;
+}
+.main-slider-wrapper__circles.active.hide .main-slider-wrapper__circle-3 {
+  -webkit-animation: hideCircle-3 400ms forwards;
+          animation: hideCircle-3 400ms forwards;
+}
+.main-slider-wrapper__circles.active.hide .main-slider-wrapper__circle-4 {
+  -webkit-animation: hideCircle-4 400ms forwards;
+          animation: hideCircle-4 400ms forwards;
+}
+.main-slider-wrapper__circles.active.hide .main-slider-wrapper__circle-5 {
+  -webkit-animation: hideCircle-5 400ms forwards;
+          animation: hideCircle-5 400ms forwards;
+}
+
+.main-slider-wrapper__circle {
+  width: 0%;
+  height: 0%;
+}
+
+@-webkit-keyframes showCircle-1 {
+  to {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@keyframes showCircle-1 {
+  to {
+    width: 100%;
+    height: 100%;
+  }
+}
+@-webkit-keyframes showCircle-2 {
+  to {
+    width: 66.66666%;
+    height: 66.66666%;
+  }
+}
+@keyframes showCircle-2 {
+  to {
+    width: 66.66666%;
+    height: 66.66666%;
+  }
+}
+@-webkit-keyframes showCircle-3 {
+  to {
+    width: 45%;
+    height: 45%;
+  }
+}
+@keyframes showCircle-3 {
+  to {
+    width: 45%;
+    height: 45%;
+  }
+}
+@-webkit-keyframes showCircle-4 {
+  to {
+    width: 33%;
+    height: 33%;
+  }
+}
+@keyframes showCircle-4 {
+  to {
+    width: 33%;
+    height: 33%;
+  }
+}
+@-webkit-keyframes showCircle-5 {
+  to {
+    width: 28%;
+    height: 28%;
+  }
+}
+@keyframes showCircle-5 {
+  to {
+    width: 28%;
+    height: 28%;
+  }
+}
+@-webkit-keyframes hideCircle-1 {
+  0% {
+    width: 100%;
+    height: 100%;
+  }
+  99% {
+    width: 0%;
+    height: 0%;
+  }
+  100% {
+    width: 0%;
+    height: 0%;
+    opacity: 0;
+  }
+}
+@keyframes hideCircle-1 {
+  0% {
+    width: 100%;
+    height: 100%;
+  }
+  99% {
+    width: 0%;
+    height: 0%;
+  }
+  100% {
+    width: 0%;
+    height: 0%;
+    opacity: 0;
+  }
+}
+@-webkit-keyframes hideCircle-2 {
+  0% {
+    width: 66.66666%;
+    height: 66.66666%;
+  }
+  99% {
+    width: 0%;
+    height: 0%;
+  }
+  100% {
+    width: 0%;
+    height: 0%;
+    opacity: 0;
+  }
+}
+@keyframes hideCircle-2 {
+  0% {
+    width: 66.66666%;
+    height: 66.66666%;
+  }
+  99% {
+    width: 0%;
+    height: 0%;
+  }
+  100% {
+    width: 0%;
+    height: 0%;
+    opacity: 0;
+  }
+}
+@-webkit-keyframes hideCircle-3 {
+  0% {
+    width: 33%;
+    height: 33%;
+  }
+  99% {
+    width: 0%;
+    height: 0%;
+  }
+  100% {
+    width: 0%;
+    height: 0%;
+    opacity: 0;
+  }
+}
+@keyframes hideCircle-3 {
+  0% {
+    width: 33%;
+    height: 33%;
+  }
+  99% {
+    width: 0%;
+    height: 0%;
+  }
+  100% {
+    width: 0%;
+    height: 0%;
+    opacity: 0;
+  }
+}
+@-webkit-keyframes hideCircle-4 {
+  0% {
+    width: 33%;
+    height: 33%;
+  }
+  99% {
+    width: 0%;
+    height: 0%;
+  }
+  100% {
+    width: 0%;
+    height: 0%;
+    opacity: 0;
+  }
+}
+@keyframes hideCircle-4 {
+  0% {
+    width: 33%;
+    height: 33%;
+  }
+  99% {
+    width: 0%;
+    height: 0%;
+  }
+  100% {
+    width: 0%;
+    height: 0%;
+    opacity: 0;
+  }
+}
+@-webkit-keyframes hideCircle-5 {
+  0% {
+    width: 28%;
+    height: 28%;
+  }
+  99% {
+    width: 0%;
+    height: 0%;
+  }
+  100% {
+    width: 0%;
+    height: 0%;
+    opacity: 0;
+  }
+}
+@keyframes hideCircle-5 {
+  0% {
+    width: 28%;
+    height: 28%;
+  }
+  99% {
+    width: 0%;
+    height: 0%;
+  }
+  100% {
+    width: 0%;
+    height: 0%;
+    opacity: 0;
+  }
+}
 .main-slider-wrapper__circles {
   position: absolute;
   width: 490px;

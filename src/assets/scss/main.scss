@@ -1375,7 +1375,11 @@ label{
 	p{
 		position: relative;
 		z-index: 10;
+		transition-property: color, text-shadow;
+		transition-duration:  300ms, 0ms;
+		transition-delay: 300ms, 1000ms;
 
+		transition-timing-function: ease-out
 		
 	}
 	&:hover{
