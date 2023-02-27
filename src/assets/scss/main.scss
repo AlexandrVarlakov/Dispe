@@ -449,7 +449,11 @@ main.can-sticky{
 		transform: rotate(0deg);
 	}
 }
-
+.category-section{
+	@media (min-width: $lg){
+		z-index: 1 !important;
+	}
+}
 .input, .textarea{
 	width: 100%;
 	padding: 18px 16px;

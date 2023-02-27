@@ -8144,6 +8144,12 @@ main.can-sticky {
           transform: rotate(0deg);
 }
 
+@media (min-width: 992px) {
+  .category-section {
+    z-index: 1 !important;
+  }
+}
+
 .input, .textarea {
   width: 100%;
   padding: 18px 16px;

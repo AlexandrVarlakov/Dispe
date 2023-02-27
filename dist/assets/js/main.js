@@ -888,13 +888,17 @@ if ( uncheckFilterBtns.length ){
 
 const showMobFilter = document.querySelector('.show-mob-filter');
 const filterClose = document.querySelector('.filter__close');
+const parentSection = document.querySelector('.category-section');
     if ( showMobFilter ){
         showMobFilter.addEventListener('click', function(){
             filterWrap.classList.add('show');
+            parentSection.style.zIndex = 900;
+            
         });
 
         filterClose.addEventListener('click', function(){
             filterWrap.classList.remove('show');
+            parentSection.style.zIndex = 1;
         })
     }
     
