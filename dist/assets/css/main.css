@@ -17787,6 +17787,13 @@ section.section.main-slider-section::before {
     padding: 24px;
   }
 }
+@media (min-width: 992px) {
+  .about-order {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 132px;
+  }
+}
 @media (min-width: 1300px) {
   .about-order {
     padding: 40px;
